@@ -1,0 +1,50 @@
+@model mitfahr.Models.Journey
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Journey</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Idjourney" />
+            <div class="form-group">
+                <label asp-for="DepartureTime" class="control-label"></label>
+                <input asp-for="DepartureTime" class="form-control" />
+                <span asp-validation-for="DepartureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Regularly" class="control-label"></label>
+                <input asp-for="Regularly" class="form-control" />
+                <span asp-validation-for="Regularly" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Smoker" class="control-label"></label>
+                <input asp-for="Smoker" class="form-control" />
+                <span asp-validation-for="Smoker" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="DeparturePointPostcode" />
+            <input type="hidden" asp-for="UserIdUser" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

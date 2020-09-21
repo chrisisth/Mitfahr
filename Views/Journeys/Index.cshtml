@@ -1,0 +1,65 @@
+@model IEnumerable<mitfahr.Models.Journey>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Regularly)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Smoker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeparturePointPostcodeNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserIdUserNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Regularly)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Smoker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeparturePointPostcodeNavigation.Postcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserIdUserNavigation.EMail)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
