@@ -12,6 +12,9 @@ namespace mitfahr.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        
+        [BindProperty]
+        private User currentuser { get; set; }
 
         public HomeController(ILogger<HomeController> logger)
         {

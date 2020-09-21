@@ -1,0 +1,24 @@
+﻿@model IEnumerable<mitfahr.Models.User>
+@{
+    ViewData["Title"] = "Schüler-Login";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="primaryborder">@ViewData["Title"]</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <section>
+                <form id="login" method="post">
+                    <div class="form-group">
+                        <label>Schüler E-Mail</label>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
